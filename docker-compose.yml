@@ -1,0 +1,87 @@
+version: '3.4'
+
+# for creating user and passwords
+# mosquitto_passwd -b /mosquitto/config/password.txt <username> <password>
+# in docker desktop exec
+
+# set the timezone of all container
+x-common-variables: &common-variables
+  TZ: Europe/Amsterdam
+
+services:
+
+  # MQTT broker
+  mqtt:
+    image: eclipse-mosquitto
+    restart: on-failure
+    container_name: eclipse
+    ports:
+      - 0.0.0.0:1883:1883
+    networks:
+      - eclipse_bridge
+    environment:
+      <<: *common-variables
+    volumes:
+      - ./eclipse/config/:/mosquitto/config/
+      - ./eclipse/log/:/mosquitto/log/
+      - ./eclipse/data/:/mosquitto/data/
+
+  # database for storing MQTT messages
+  mysql:
+    image: mysql
+    container_name: eclipse_db
+    restart: on-failure
+    environment:
+      <<: *common-variables
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: eclipse_db
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "pass"
+    ports:
+      - "3306:3306"
+    networks:
+      - db_bridge
+    volumes:
+      - ./eclipse/mysql:/var/lib/mysql
+
+  # browser interface for database
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    restart: on-failure
+    links:
+      - mysql
+    environment:
+      <<: *common-variables
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - db_bridge
+    ports:
+      - "80:80"
+
+  # container for running the python script
+  python:
+    container_name: python
+    restart: on-failure
+    depends_on:
+      - mysql
+    networks:
+      - db_bridge
+      - eclipse_bridge
+    environment:
+      <<: *common-variables
+      PYTHONUNBUFFERED: 1
+    build:
+      context: .
+      dockerfile: dockerfile
+
+networks:
+
+  # network bridge that connect mysql database to other containers
+  db_bridge:
+    driver: bridge
+
+  # network bridge that connects python script to MQTT broker
+  eclipse_bridge:
+    driver: bridge
