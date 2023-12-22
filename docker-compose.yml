@@ -22,11 +22,11 @@ services:
     environment:
       <<: *common-variables
     volumes:
-      - type: bind
-        source: ./eclipse/config/
-        target: /mosquitto/config/
+#      - type: bind
+#        source: ./eclipse/config/
+#        target: /mosquitto/config/
 
-#      - ./eclipse/config/:/mosquitto/config/
+      - ./eclipse/config/:/mosquitto/config/
       - ./eclipse/log/:/mosquitto/log/
       - ./eclipse/data/:/mosquitto/data/
 
