@@ -26,7 +26,7 @@ services:
 #        source: ./eclipse/config/
 #        target: /mosquitto/config/
 
-#      - ./eclipse/config/:/mosquitto/config/
+      - ./eclipse/config/:/mosquitto/config/
       - ./eclipse/log/:/mosquitto/log/
       - ./eclipse/data/:/mosquitto/data/
 
@@ -80,9 +80,8 @@ services:
       context: .
       dockerfile: dockerfile
 
-volumes:
-  eclipse_config:
-    external: true
+#volumes:
+#  eclipse_config:
 #  eclipse_log:
 #  eclipse_data:
 #
