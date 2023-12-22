@@ -22,7 +22,11 @@ services:
     environment:
       <<: *common-variables
     volumes:
-      - ./eclipse/config/:/mosquitto/config/
+      - type: bind
+        source: ./eclipse/config/
+        target: /mosquitto/config/
+
+#      - ./eclipse/config/:/mosquitto/config/
       - ./eclipse/log/:/mosquitto/log/
       - ./eclipse/data/:/mosquitto/data/
 
@@ -75,6 +79,17 @@ services:
     build:
       context: .
       dockerfile: dockerfile
+
+#volumes:
+#  eclipse_config:
+#  eclipse_log:
+#  eclipse_data:
+#
+#  eclips_mysql:
+
+#  - ./eclipse/config/:/mosquitto/config/
+#  - ./eclipse/log/:/mosquitto/log/
+#  - ./eclipse/data/:/mosquitto/data/
 
 networks:
 
