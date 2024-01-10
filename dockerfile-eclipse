@@ -1,0 +1,17 @@
+
+# create working directory
+RUN mkdir /mosquitto/config/
+COPY ./eclipse/config/mosquitto.conf /mosquitto/config/
+COPY ./eclipse/config/password.txt /mosquitto/config/
+
+# create working directory
+RUN mkdir /mosquitto/log/
+COPY ./eclipse/log/mosquitto.log /mosquitto/log/
+
+# create working directory
+RUN mkdir /mosquitto/data/
+COPY ./eclipse/data/mosquitto.db /mosquitto/data/
+
+#      - ./eclipse/config/:/mosquitto/config/
+#      - ./eclipse/log/:/mosquitto/log/
+#      - ./eclipse/data/:/mosquitto/data/

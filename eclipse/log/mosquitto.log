@@ -44,3 +44,80 @@ To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
 1703230527: New client connected from 172.21.0.3:35601 as auto-14269A32-F08B-0FC4-453A-B5252CCDABA6 (p2, c1, k60, u'python').
 1703230544: mosquitto version 2.0.18 terminating
 1703230544: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1703234521: mosquitto version 2.0.18 starting
+1703234521: Config loaded from /mosquitto/config/mosquitto.conf.
+1703234521: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1703234521: Opening ipv4 listen socket on port 1883.
+1703234521: Opening ipv6 listen socket on port 1883.
+1703234521: Opening websockets listen socket on port 9001.
+1703234521: mosquitto version 2.0.18 running
+1703234524: New connection from 192.168.176.3:38885 on port 1883.
+1703234524: New client connected from 192.168.176.3:38885 as auto-C1EC91DC-4319-C929-19DC-DA027ACC928A (p2, c1, k60, u'python').
+1703234591: mosquitto version 2.0.18 terminating
+1703234591: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1703237915: mosquitto version 2.0.18 starting
+1703237915: Config loaded from /mosquitto/config/mosquitto.conf.
+1703237915: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1703237915: Opening ipv4 listen socket on port 1883.
+1703237915: Opening ipv6 listen socket on port 1883.
+1703237915: Opening websockets listen socket on port 9001.
+1703237915: mosquitto version 2.0.18 running
+1703237918: New connection from 172.18.0.3:45185 on port 1883.
+1703237918: New client connected from 172.18.0.3:45185 as auto-C457606F-FBC0-3C29-0C94-C868A0FF6D02 (p2, c1, k60, u'python').
+1703237970: mosquitto version 2.0.18 terminating
+1703237970: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1703237970: Warning: File /mosquitto/data//mosquitto.db.new has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/data//mosquitto.db.new`.
+1703237970: Warning: File /mosquitto/data//mosquitto.db.new owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mosquitto/data//mosquitto.db.new`.
+1703237970: Warning: File /mosquitto/data//mosquitto.db.new group is not mosquitto. Future versions will refuse to load this file.
+1703237990: mosquitto version 2.0.18 starting
+1703237990: Config loaded from /mosquitto/config/mosquitto.conf.
+1703237990: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1703237990: Opening ipv4 listen socket on port 1883.
+1703237990: Opening ipv6 listen socket on port 1883.
+1703237990: Opening websockets listen socket on port 9001.
+1703237990: mosquitto version 2.0.18 running
+1703237995: New connection from 172.21.0.3:47445 on port 1883.
+1703237995: New client connected from 172.21.0.3:47445 as auto-61C43165-0413-4ECA-D0BC-972A9EABB9E9 (p2, c1, k60, u'python').
+1703238195: mosquitto version 2.0.18 terminating
+1703238195: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1703238195: Warning: File /mosquitto/data//mosquitto.db.new has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/data//mosquitto.db.new`.
+1703238195: Warning: File /mosquitto/data//mosquitto.db.new owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mosquitto/data//mosquitto.db.new`.
+1703238195: Warning: File /mosquitto/data//mosquitto.db.new group is not mosquitto. Future versions will refuse to load this file.
+1703238214: mosquitto version 2.0.18 starting
+1703238214: Config loaded from /mosquitto/config/mosquitto.conf.
+1703238214: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1703238214: Opening ipv4 listen socket on port 1883.
+1703238214: Opening ipv6 listen socket on port 1883.
+1703238214: Opening websockets listen socket on port 9001.
+1703238214: mosquitto version 2.0.18 running
+1703238219: New connection from 172.23.0.3:45167 on port 1883.
+1703238219: New client connected from 172.23.0.3:45167 as auto-124BB2FB-989A-27D3-F2A9-40A5CBC3E9C8 (p2, c1, k60, u'python').
+1703240015: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1703240015: Warning: File /mosquitto/data//mosquitto.db.new has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/data//mosquitto.db.new`.
+1703240015: Warning: File /mosquitto/data//mosquitto.db.new owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mosquitto/data//mosquitto.db.new`.
+1703240015: Warning: File /mosquitto/data//mosquitto.db.new group is not mosquitto. Future versions will refuse to load this file.
+1703240932: mosquitto version 2.0.18 starting
+1703240932: Config loaded from /mosquitto/config/mosquitto.conf.
+1703240932: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1703240932: Opening ipv4 listen socket on port 1883.
+1703240932: Opening ipv6 listen socket on port 1883.
+1703240932: Opening websockets listen socket on port 9001.
+1703240932: mosquitto version 2.0.18 running
+1703240935: New connection from 172.22.0.3:36185 on port 1883.
+1703240935: New client connected from 172.22.0.3:36185 as auto-F092083C-77E1-506C-4E73-E9A6D695C532 (p2, c1, k60, u'python').
+1703240945: mosquitto version 2.0.18 terminating
+1703240945: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1703240945: Warning: File /mosquitto/data//mosquitto.db.new has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/data//mosquitto.db.new`.
+1703240945: Warning: File /mosquitto/data//mosquitto.db.new owner is not mosquitto. Future versions will refuse to load this file.To fix this, use `chown mosquitto /mosquitto/data//mosquitto.db.new`.
+1703240945: Warning: File /mosquitto/data//mosquitto.db.new group is not mosquitto. Future versions will refuse to load this file.
+1703240983: mosquitto version 2.0.18 terminating
+1703240983: Saving in-memory database to /mosquitto/data//mosquitto.db.

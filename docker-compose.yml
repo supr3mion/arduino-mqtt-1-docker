@@ -26,9 +26,11 @@ services:
 #        source: ./eclipse/config/
 #        target: /mosquitto/config/
 
-      - ./eclipse/config/:/mosquitto/config/
-      - ./eclipse/log/:/mosquitto/log/
-      - ./eclipse/data/:/mosquitto/data/
+
+      - /eclipse/config/:/mosquitto/config/
+#      - eclipse_config:/mosquitto/config/
+      - /eclipse/log/:/mosquitto/log/
+      - /eclipse/data/:/mosquitto/data/
 
   # database for storing MQTT messages
   mysql:
@@ -46,7 +48,8 @@ services:
     networks:
       - db_bridge
     volumes:
-      - ./eclipse/mysql:/var/lib/mysql
+      - /eclipse/mysql:/var/lib/mysql
+#      - eclipse_config:./eclipse/mysql
 
   # browser interface for database
   phpmyadmin:
@@ -82,6 +85,9 @@ services:
 
 #volumes:
 #  eclipse_config:
+
+
+
 #  eclipse_log:
 #  eclipse_data:
 #
