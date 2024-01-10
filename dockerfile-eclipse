@@ -2,7 +2,7 @@
 FROM eclipse-mosquitto
 
 # create working directory
-RUN mkdir /mosquitto/config/
+RUN #mkdir /mosquitto/config/
 COPY ./eclipse/config/mosquitto.conf /mosquitto/config/
 COPY ./eclipse/config/password.txt /mosquitto/config/
 
