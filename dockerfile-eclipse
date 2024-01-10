@@ -1,4 +1,6 @@
 
+FROM eclipse-mosquitto
+
 # create working directory
 RUN mkdir /mosquitto/config/
 COPY ./eclipse/config/mosquitto.conf /mosquitto/config/

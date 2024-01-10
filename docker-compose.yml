@@ -12,7 +12,10 @@ services:
 
   # MQTT broker
   mqtt:
-    image: eclipse-mosquitto
+#    image: eclipse-mosquitto
+    build:
+      context: .
+      dockerfile: dockerfile-eclipse
     restart: on-failure
     container_name: eclipse
     ports:
@@ -21,16 +24,17 @@ services:
       - eclipse_bridge
     environment:
       <<: *common-variables
-    volumes:
-#      - type: bind
-#        source: ./eclipse/config/
-#        target: /mosquitto/config/
-
-
-      - /eclipse/config/:/mosquitto/config/
-#      - eclipse_config:/mosquitto/config/
-      - /eclipse/log/:/mosquitto/log/
-      - /eclipse/data/:/mosquitto/data/
+#    volumes:
+##      - type: bind
+##        source: ./eclipse/config/
+##        target: /mosquitto/config/
+#
+#
+##      - eclipse_config:/mosquitto/config/
+#      - ./eclipse/config/:/mosquitto/config/
+##      - eclipse_config:/mosquitto/config/
+#      - ./eclipse/log/:/mosquitto/log/
+#      - ./eclipse/data/:/mosquitto/data/
 
   # database for storing MQTT messages
   mysql:
@@ -83,8 +87,9 @@ services:
       context: .
       dockerfile: dockerfile
 
-#volumes:
-#  eclipse_config:
+volumes:
+  eclipse_config:
+    driver: local
 
 
 
