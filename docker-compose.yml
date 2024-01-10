@@ -12,10 +12,10 @@ services:
 
   # MQTT broker
   mqtt:
-#    image: eclipse-mosquitto
-    build:
-      context: .
-      dockerfile: dockerfile-eclipse
+    image: eclipse-mosquitto
+#    build:
+#      context: .
+#      dockerfile: dockerfile-eclipse
     restart: on-failure
     container_name: eclipse
     ports:
@@ -24,20 +24,10 @@ services:
       - eclipse_bridge
     environment:
       <<: *common-variables
-#    volumes:
-#      - type: bind
-#        source: ./eclipse/config/
-#        target: /mosquitto/config/
-
-
-##      - eclipse_config:/mosquitto/config/
-#      - ./eclipse/config/:/mosquitto/config/
-##      - eclipse_config:/mosquitto/config/
-#      - ./eclipse/log/:/mosquitto/log/
-#      - ./eclipse/data/:/mosquitto/data/
-#      - eclipse_config:/mosquitto/config/
-#      - eclipse_log:/mosquitto/log/
-#      - eclipse_data:/mosquitto/data/
+    volumes:
+      - ./eclipse/config/:/mosquitto/config/
+      - ./eclipse/log/:/mosquitto/log/
+      - ./eclipse/data/:/mosquitto/data/
 
   # database for storing MQTT messages
   mysql:
@@ -56,7 +46,6 @@ services:
       - db_bridge
     volumes:
       - /eclipse/mysql:/var/lib/mysql
-#      - eclipse_config:./eclipse/mysql
 
   # browser interface for database
   phpmyadmin:
@@ -72,7 +61,7 @@ services:
     networks:
       - db_bridge
     ports:
-      - "90:80"
+      - "80:80"
 
   # container for running the python script
   python:
@@ -89,22 +78,6 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-
-volumes:
-  eclipse_config:
-  eclipse_log:
-  eclipse_data:
-
-
-
-#  eclipse_log:
-#  eclipse_data:
-#
-#  eclips_mysql:
-
-#  - ./eclipse/config/:/mosquitto/config/
-#  - ./eclipse/log/:/mosquitto/log/
-#  - ./eclipse/data/:/mosquitto/data/
 
 networks:
 
