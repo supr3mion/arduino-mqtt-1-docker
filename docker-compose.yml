@@ -65,7 +65,7 @@ services:
     networks:
       - db_bridge
     ports:
-      - "80:80"
+      - "90:80"
 
   # container for running the python script
   python:
