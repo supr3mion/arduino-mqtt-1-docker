@@ -24,7 +24,7 @@ services:
       - eclipse_bridge
     environment:
       <<: *common-variables
-    volumes:
+#    volumes:
 #      - type: bind
 #        source: ./eclipse/config/
 #        target: /mosquitto/config/
@@ -35,9 +35,9 @@ services:
 ##      - eclipse_config:/mosquitto/config/
 #      - ./eclipse/log/:/mosquitto/log/
 #      - ./eclipse/data/:/mosquitto/data/
-      - eclipse_config:/mosquitto/config/
-      - eclipse_log:/mosquitto/log/
-      - eclipse_data:/mosquitto/data/
+#      - eclipse_config:/mosquitto/config/
+#      - eclipse_log:/mosquitto/log/
+#      - eclipse_data:/mosquitto/data/
 
   # database for storing MQTT messages
   mysql:
